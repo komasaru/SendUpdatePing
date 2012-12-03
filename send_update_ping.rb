@@ -10,8 +10,8 @@
 #++
 require 'xmlrpc/client'
 
-SITE_NAME = "hogehoge BLOG"          # 自サイト名称
-SITE_URL  = "http://xxxxxxxx/blog/"  # 自サイト URL
+SITE_NAME = "hogehoge BLOG"              # 自サイト名称
+SITE_URL  = "http://xxxxxxxx.com/blog/"  # 自サイト URL
 # Ping サーバ一覧 ( 以下に送信先を設定する )
 PING_SERVERS = [
   "http://api.my.yahoo.co.jp/RPC2",
