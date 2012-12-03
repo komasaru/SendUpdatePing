@@ -10,24 +10,20 @@
 #++
 require 'xmlrpc/client'
 
-SITE_NAME = "hogehoge BLOG"              # 自サイト名称
-SITE_URL  = "http://xxxxxxxx.com/blog/"  # 自サイト URL
+SITE_NAME = "hogehoge BLOG"          # 自サイト名称
+SITE_URL  = "http://xxxxxxxx/blog/"  # 自サイト URL
+# Ping サーバ一覧 ( 以下に送信先を設定する )
+PING_SERVERS = [
+  "http://api.my.yahoo.co.jp/RPC2",
+  "http://blogsearch.google.co.jp/ping/RPC2"
+]
 
 # 処理クラス
 class Main
-  # INITIALIZER
-  def initialize
-    # 送信先一覧設定 ( 以下の配列に追加する )
-    @ping_servers = [
-      "http://api.my.yahoo.co.jp/RPC2",
-      "http://blogsearch.google.co.jp/ping/RPC2"
-    ]
-  end
-
   # サイト更新 Ping 送信処理
   def send
     begin
-      @ping_servers.each do |svr|
+      PING_SERVERS.each do |svr|
         puts "- #{svr}"
         client = XMLRPC::Client.new2(svr)
         begin
